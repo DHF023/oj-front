@@ -10,13 +10,12 @@
     <v-data-table-server v-model:items-per-page="itemsPerPage" :headers="headers" :items="showItems"
       :items-length="totalItems" :loading="loading" :search="search" item-value="name"
       @update:options="loadItems"></v-data-table-server>
-    <!-- @update:options="loadItems" -->
   </v-card>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-const search = '';
+const search = ref('');
 const headers = [
   { title: '状态', key: 'status', align: 'start' as 'start', width: '5%', sortable: false },
   { title: '#', key: 'id', align: 'start' as 'start', sortable: true },
